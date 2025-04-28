@@ -1,87 +1,61 @@
-# BBG take-home-challenge
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## Description
-We appreciate your interest in joining our BBG gang as a Full-Stack Developer. This take-home challenge will help us evaluate your coding skills, problem-solving approach, and ability to create functional web applications.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-## Objective
+## About Laravel
 
-Build a basic product catalog application that allows users to:
-- View a list of products
-- See details of individual products
-- Filter products by category
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Requirements
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-### Backend Development
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-**Technology Stack:**
-- PHP with a lightweight framework of your choice
-- Use a SQL database (MySQL or PostgreSQL)
+## Learning Laravel
 
-**Features to Implement:**
-1. Create an API with the following endpoints:
-    - GET `/api/products` - List all products with pagination (limit 10 per page)
-    - GET `/api/products/:id` - Get a single product by ID
-    - GET `/api/categories` - List all product categories
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-2. Data Requirements:
-    - Create a simple database schema for products with at least these fields:
-        - id
-        - name
-        - price
-        - description
-        - category_id
-        - image_url (can be a placeholder)
-    - Create a categories table with at least:
-        - id
-        - name
-    - Seed the database with at least 15 sample products across 3-5 categories
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-### Frontend Development
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-**Technology Stack:**
-- Use your preferred frontend framework/library or pure JS with CS
+## Laravel Sponsors
 
-**Features to Implement:**
-1. Product Listing Page:
-    - Display products in a grid with basic information (name, price, image)
-    - Show pagination controls
-    - Includes a simple dropdown to filter by category
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-2. Product Detail Page:
-    - Show complete product information when a user clicks on a product
-    - Include a "Back to Listing" button
+### Premium Partners
 
-### Optional features to Implement
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development/)**
+- **[Active Logic](https://activelogic.com)**
 
-- Multilingual support
-- Implement search functionality to filter products.
-- Implement shopping cart.
-- Implement checkout process.
+## Contributing
 
-### Requirements for Both:
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-- Clean, readable code with appropriate comments
-- Basic error handling
-- Responsive design (mobile-friendly)
+## Code of Conduct
 
-## Evaluation Criteria
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-Your submission will be evaluated based on:
-- Functionality (does it work as expected?)
-- Code quality and organization
-- Proper use of the selected technologies
-- UI/UX considerations
-- Documentation quality
+## Security Vulnerabilities
 
-## Submission
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-Please submit your code as Pull Request to this repository.
+## License
 
-# Development
-## Quick Start
-
-Start mysql database
-```bash
-  docker compose up
-```
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
