@@ -81,7 +81,7 @@ Please submit your code as Pull Request to this repository.
 # Development
 ## Quick Start
 
-Start mysql database
+Start
 ```bash
-  docker compose up
+  bash start-dev.sh
 ```
