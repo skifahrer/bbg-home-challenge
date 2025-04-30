@@ -12,12 +12,12 @@ class CategoryController extends Controller
      * Display a listing of all categories.
      *
      * This method retrieves all records from the Category model
-     * and returns them as a collection.
+     * and returns them as a json.
      *
-     * @return \Illuminate\Database\Eloquent\Collection|\App\Models\Category[]
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
-        return Category::all();
+        return response()->json(Category::all());
     }
 }

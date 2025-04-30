@@ -13,9 +13,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function index()
+    public function index(Request $request)
     {
-        // ...
+        $query = Product::query();
+
+        if ($request->has('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        return $query->with('category')->paginate(10);
     }
 
     /**
@@ -28,6 +34,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        // ...
+        $product = Product::with('category')->findOrFail($id);
+
+        return response()->json($product);
     }
 }
