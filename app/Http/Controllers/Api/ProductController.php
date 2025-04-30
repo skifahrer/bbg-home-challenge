@@ -21,7 +21,9 @@ class ProductController extends Controller
             $query->where('category_id', $request->category);
         }
 
-        return $query->with('category')->paginate(10);
+        return response()->json(
+            $query->with('category')->paginate(10)
+        );
     }
 
     /**

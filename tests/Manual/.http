@@ -1,0 +1,20 @@
+### This file contains HTTP requests for testing the API endpoints.
+### Use REST Client in your IDE or Postman to run these requests.
+
+### Test Request (laravel homepage)
+GET http://localhost:8000
+
+### Test Request (ping)
+GET http://localhost:8000/api/ping
+
+### API products
+
+GET http://localhost:8000/api/products
+
+### API products with ID
+
+GET http://localhost:8000/api/products/1
+
+### API categories
+
+GET http://localhost:8000/api/categories

@@ -10,3 +10,6 @@ Route::prefix('products')->group(function () {
 });
 
 Route::get('categories', [CategoryController::class, 'index']); // GET /api/categories
+
+Route::get('/ping', fn() => response()->json(['pong' => true]));
+

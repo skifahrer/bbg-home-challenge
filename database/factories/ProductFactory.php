@@ -10,7 +10,7 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->productName ?? $this->faker->words(2, true),
+            'name' => $this->faker->words(2, true),
             'price' => $this->faker->randomFloat(2, 5, 500),
             'description' => $this->faker->sentence,
             'category_id' => Category::factory(),
