@@ -22,7 +22,7 @@ class ProductController extends Controller
         }
 
         return response()->json(
-            $query->with('category')->paginate(10)
+            $query->paginate(10)
         );
     }
 

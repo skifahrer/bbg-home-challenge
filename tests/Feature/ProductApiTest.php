@@ -30,12 +30,28 @@ class ProductApiTest extends TestCase
         $response->assertStatus(200)
                  ->assertJsonStructure([
                     'current_page',
-                    'data',
+                    'data' => [
+                        '*' => [
+                            'id',
+                            'name',
+                            'description',
+                            'price',
+                            'category_id',
+                            'created_at',
+                            'updated_at',
+                        ],
+                    ],
                     'first_page_url',
                     'from',
                     'last_page',
                     'last_page_url', 
-                    'links',
+                    'links' => [
+                        '*' => [
+                            'url',
+                            'label',
+                            'active',
+                        ],
+                    ],
                     'next_page_url',
                     'path',
                     'per_page',
