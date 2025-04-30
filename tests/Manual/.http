@@ -11,6 +11,9 @@ GET http://localhost:8000/api/ping
 
 GET http://localhost:8000/api/products
 
+### API products with pagination
+GET http://localhost:8000/api/products?page=2
+
 ### API products with ID
 
 GET http://localhost:8000/api/products/1
