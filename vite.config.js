@@ -3,6 +3,8 @@ import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 
+const disableHash = process.env.NO_HASH === 'true';
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -14,5 +16,12 @@ export default defineConfig({
     ],
     build: {
         outDir: 'dist',
-    }
+        rollupOptions: {
+            output: {
+                entryFileNames: disableHash ? 'assets/[name].js' : 'assets/[name].[hash].js',
+                chunkFileNames: disableHash ? 'assets/[name].js' : 'assets/[name].[hash].js',
+                assetFileNames: disableHash ? 'assets/[name][extname]' : 'assets/[name].[hash][extname]',
+            },
+        },
+    },
 });

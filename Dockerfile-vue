@@ -5,13 +5,18 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install && npm run build
+RUN npm install && \
+    NO_HASH=true npm run build && \
+    test -d dist || (echo "Directory dist not created" && exit 1)
+
 
 # 2. production NGINX server
 FROM nginx:alpine
 
 # copy Vue app
 COPY --from=builder /app/dist /usr/share/nginx/html
+RUN rm ./usr/share/nginx/html/index.html
+COPY ./resources/static /usr/share/nginx/html
 
 # copy NGINX configuration
 COPY ./nginx/nginx-vue.conf /etc/nginx/nginx.conf
