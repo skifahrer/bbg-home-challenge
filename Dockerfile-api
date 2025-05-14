@@ -30,7 +30,7 @@ COPY . .
 
 # Práva
 RUN chmod -R 775 storage bootstrap/cache \
- && chown -R www-data:www-data storage bootstrap/cache
+ && chown -R www-data:www-data /var/www
 
 EXPOSE 9000
 
