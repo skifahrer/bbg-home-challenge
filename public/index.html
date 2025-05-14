@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>BBG challange</title>
+  <link rel="stylesheet" href="/dist/css/style.css">
+</head>
+<body>
+<div data-controller="catalog" class="container" >
+
+  <div class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Berlin Brand Group Challange App</h1>
+        <p class="lead text-body-secondary">Choose category</p>
+        <select class="form-select" data-catalog-target="categorySelect" data-action="change->catalog#filterByCategory">
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <div data-catalog-target="paginationTop" class="btn-group m-3">
+    </div>
+  </div>
+
+  <div data-catalog-target="productList"></div>
+  <div data-catalog-target="productDetail"> </div>
+
+  <div class="text-center">
+    <div data-catalog-target="paginationBottom" class="btn-group m-3">
+    </div>
+  </div>
+
+</div>
+
+<div class="py-5 container">
+  <p class="mb-1">BBG challenge app, design made by Boostrap.</p>
+</div>
+
+<script src="/dist/js/style.js"></script>
+<script src="/dist/js/app.js"></script>
+</body>
+</html>

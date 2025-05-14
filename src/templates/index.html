@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>BBG challange</title>
+  <link rel="stylesheet" href="/dist/css/style.css">
+</head>
+<body>
+<div class="container mt-5" data-controller="hello">
+  <h1 class="text-primary" data-hello-target="output">Načítavam...</h1>
+</div>
+
+<div data-controller="category">
+  <select data-category-target="select" data-action="change->category#selectChanged"></select>
+</div>
+
+<ul data-controller="product-list" data-product-list-target="list"></ul>
+
+<div data-controller="product-detail" data-product-detail-target="output"></div>
+
+<script src="/dist/js/app.js"></script>
+</body>
+</html>

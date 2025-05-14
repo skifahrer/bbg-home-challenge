@@ -81,7 +81,26 @@ Please submit your code as Pull Request to this repository.
 # Development
 ## Quick Start
 
-Start mysql database
+Start docker project
 ```bash
   docker compose up
+```
+
+Run this in php service to install Database data
+```bash
+  php bin/install.php
+```
+
+Run this in npm service to install frontend:
+- for running watcher
+```bash
+  npm run watch
+```
+- for development
+```bash
+  npm run dev 
+```
+- for production
+```bash
+  npm run build
 ```
