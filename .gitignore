@@ -1,0 +1,9 @@
+/node_modules/
+/vendor/
+/.idea
+/@charset
+/public/dist/js/app.js
+/public/dist/js/app.js.LICENSE.txt
+/public/dist/js/style.js
+/public/dist/css/app.css
+/public/dist/css/style.css
