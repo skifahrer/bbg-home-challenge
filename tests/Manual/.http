@@ -15,9 +15,7 @@ GET http://localhost:8000/api/products
 GET http://localhost:8000/api/products?page=2
 
 ### API products with ID
-
 GET http://localhost:8000/api/products/1
 
 ### API categories
-
 GET http://localhost:8000/api/categories

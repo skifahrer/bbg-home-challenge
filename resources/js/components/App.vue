@@ -1,7 +1,8 @@
 <template>
     <div class="container py-4">
         <h1>Product Catalog</h1>
-        <!-- Tu neskôr pridáme ProductList, Filter, Pagination -->
+        <router-view></router-view>
+        <!-- Tu neskôr pridáme Filter, Pagination -->
     </div>
 </template>
 

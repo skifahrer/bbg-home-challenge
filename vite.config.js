@@ -8,7 +8,7 @@ const disableHash = process.env.NO_HASH === 'true';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/js/app.js'],
+            input: ['resources/js/app.js', 'resources/css/style.css'],
             refresh: true,
         }),
         vue(),
