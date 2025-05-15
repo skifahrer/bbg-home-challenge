@@ -15,7 +15,6 @@ export default {
     display: flex;
     align-items: center;
     padding: 1rem;
-    background-color: #2d3748; /* Tailwind gray-800 */
     color: white;
 }
 </style>
