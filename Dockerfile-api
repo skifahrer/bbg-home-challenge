@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Skopíruj len potrebné súbory na inštaláciu composer závislostí
-COPY composer.json composer.lock artisan ./
+COPY composer.json artisan ./
 COPY bootstrap/ bootstrap/
 COPY config/ config/
 COPY routes/ routes/

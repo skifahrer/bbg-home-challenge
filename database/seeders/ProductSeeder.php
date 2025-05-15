@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
                 'price' => rand(10, 1000),
                 'description' => "This is a sample description for product $i.",
                 'category_id' => $categories->random()->id,
-                'image_url' => 'https://via.placeholder.com/150',
+                'image_url' => 'https://placehold.co/600x400',
             ]);
         }
     }

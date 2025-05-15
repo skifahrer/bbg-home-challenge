@@ -1,13 +1,15 @@
 <template>
-    <div class="container py-4">
-        <h1>Product Catalog</h1>
-        <router-view></router-view>
-        <!-- Tu neskôr pridáme Filter, Pagination -->
+    <div class="flex flex-col min-h-screen">
+        <Header class="w-full" />
+        <div class="flex flex-1 justify-center items-center p-4">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import Header from './Header.vue';
 
 const products = ref([]);
 const fetchProducts = async () => {
@@ -16,3 +18,6 @@ const fetchProducts = async () => {
 
 fetchProducts();
 </script>
+
+<style scoped>
+</style>
