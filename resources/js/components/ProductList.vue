@@ -3,9 +3,7 @@
         <h1 class="text-2xl font-bold mb-4">Product List</h1>
 
         <!-- Category Selector -->
-        <CategorySelector 
-            :categories="categories" 
-            :selectedCategory="selectedCategory" 
+        <CategorySelector :categories="categories" :selectedCategory="selectedCategory"
             @category-changed="handleCategoryChange" />
 
         <div v-if="products.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -23,10 +21,7 @@
         </div>
 
         <!-- Pagination -->
-        <Paginator 
-            v-if="pagination" 
-            :pagination="pagination" 
-            @page-changed="fetchProducts" />
+        <Paginator v-if="pagination" :pagination="pagination" @page-changed="fetchProducts" />
     </div>
 </template>
 
