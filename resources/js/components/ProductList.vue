@@ -1,5 +1,6 @@
 <template>
     <div class="product-list">
+        <LoadingOverlay v-if="loading" />
         <h1 class="text-2xl font-bold mb-4">Product List</h1>
 
         <!-- Category Selector -->
@@ -30,12 +31,16 @@
 import axios from 'axios';
 import CategorySelector from './CategorySelector.vue';
 import Paginator from './Paginator.vue';
+import LoadingOverlay from './LoadingOverlay.vue';
+
+const API_BASE_URL = import.meta.env.VITE_APP_URL || 'http://localhost';
 
 export default {
     name: 'ProductList',
     components: {
         CategorySelector,
-        Paginator
+        Paginator,
+        LoadingOverlay
     },
     data() {
         return {
@@ -43,6 +48,7 @@ export default {
             pagination: null,
             categories: [],
             selectedCategory: '',
+            loading: false,
         };
     },
     created() {
@@ -51,8 +57,9 @@ export default {
     },
     methods: {
         fetchProducts(page) {
+            this.loading = true;
             const categoryFilter = this.selectedCategory ? `&category=${this.selectedCategory}` : '';
-            axios.get(`http://localhost:8000/api/products?page=${page}${categoryFilter}`)
+            axios.get(`${API_BASE_URL}:8000/api/products?page=${page}${categoryFilter}`)
                 .then(response => {
                     console.log('Products fetched:', response.data);
                     this.products = response.data.data;
@@ -65,10 +72,13 @@ export default {
                 })
                 .catch(error => {
                     console.error('Error fetching products:', error);
+                })
+                .finally(() => {
+                    this.loading = false;
                 });
         },
         fetchCategories() {
-            axios.get('http://localhost:8000/api/categories')
+            axios.get(`${API_BASE_URL}:8000/api/categories`)
                 .then(response => {
                     console.log('Categories fetched:', response.data);
                     this.categories = response.data;

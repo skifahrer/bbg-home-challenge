@@ -18,6 +18,8 @@ import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_APP_URL || 'http://localhost';
+
 interface Product {
     id: number;
     name: string;
@@ -35,7 +37,7 @@ const notFound = ref(false);
 
 onMounted(async () => {
     try {
-        const response = await axios.get(`http://localhost:8000/api/products/${route.params.id}`);
+        const response = await axios.get(`${API_BASE_URL}:8000/api/products/${route.params.id}`);
         if (!response.data || !response.data.id) {
             notFound.value = true;
         } else {

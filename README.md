@@ -1,4 +1,31 @@
 # Development
+
+## Architecture & Features
+
+This project combines a Laravel backend with a Vue.js frontend, structured into a containerized architecture for local development and deployment.
+
+### Containerized Structure
+
+The application is split into four Docker containers:
+
+- **Laravel Container** – handles the backend logic via PHP and Laravel.
+- **Vue.js Container** – builds and serves the frontend using Vite and Nginx.
+- **Nginx Proxy Container** – proxies and serves PHP-FPM requests to the Laravel backend.
+- **Database Container** – used for testing and local development only; not intended for production use.
+
+### Frontend
+
+- Responsive layout compatible with desktop and mobile devices.
+- Integrated loading spinner for enhanced user experience during data fetching.
+- Custom `404 Not Found` page for undefined routes.
+
+### Backend
+
+- Nginx configurations are located in the `./nginx` directory and processed by two dedicated Dockerfiles
+- Faker is used to automatically generate sample data when seeding the database
+- Basic automated tests
+- Manual testing routes available in /tests/Manual/.http (in VS Code use REST Client)
+
 ## Quick Start
 ### Install
 Copy .env.example in application root directory.
@@ -10,7 +37,6 @@ Fill DB_PASSWORD and DB_ROOT_PASSWORD in .env.
 ```bash
 vi .env
 ```
-
 
 ### Run
 ```bash
