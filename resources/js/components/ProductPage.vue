@@ -1,39 +1,50 @@
 <template>
-    <div class="product-page p-4">
-        <h1 class="text-2xl font-bold mb-4">{{ product.name }}</h1>
-        <img :src="product.image_url" alt="Product Image" class="w-full h-64 object-cover rounded mb-4" />
-        <p class="text-gray-600 mb-2">{{ product.description }}</p>
-        <p class="text-green-600 font-bold mb-2"><strong>Price:</strong> {{ product.price }}</p>
-        <p class="text-gray-800"><strong>Category:</strong> {{ product.category.name }}</p>
+    <div v-if="notFound" class="product-page p-4">
+        <h1 class="text-2xl font-bold mb-4 text-red-600">404 - Product Not Found</h1>
+        <router-link to="/" class="text-blue-500 hover:underline">Back to Home</router-link>
+    </div>
+    <div v-else class="product-page p-4">
+        <h1 class="text-2xl font-bold mb-4">{{ product?.name }}</h1>
+        <router-link to="/" class="text-blue-500 hover:underline mb-4">Back to Products</router-link>
+        <img :src="product?.image_url" alt="Product Image" class="w-full h-64 object-cover rounded mb-4" />
+        <p class="text-gray-600 mb-2">{{ product?.description }}</p>
+        <p class="text-green-600 font-bold mb-2"><strong>Price:</strong> {{ product?.price }}</p>
+        <p class="text-gray-800"><strong>Category:</strong> {{ product?.category.name }}</p>
     </div>
 </template>
 
-<script>
+<script lang="ts" setup>
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import axios from 'axios';
 
-export default {
-    name: 'ProductPage',
-    props: {
-        id: {
-            type: String,
-            required: true
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+    description: string;
+    image_url: string;
+    category: {
+        name: string;
+    };
+}
+
+const route = useRoute();
+const product = ref<Product | null>(null);
+const notFound = ref(false);
+
+onMounted(async () => {
+    try {
+        const response = await axios.get(`http://localhost:8000/api/products/${route.params.id}`);
+        if (!response.data || !response.data.id) {
+            notFound.value = true;
+        } else {
+            product.value = response.data;
         }
-    },
-    data() {
-        return {
-            product: {}
-        };
-    },
-    created() {
-        axios.get(`http://localhost:8000/api/products/${this.id}`)
-            .then(response => {
-                this.product = response.data;
-            })
-            .catch(error => {
-                console.error('Error fetching product:', error);
-            });
+    } catch (error) {
+        notFound.value = true;
     }
-};
+});
 </script>
 
 <style scoped>

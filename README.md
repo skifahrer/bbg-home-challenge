@@ -1,5 +1,28 @@
-# BBG take-home-challenge
+# Development
+## Quick Start
+### Install
+Copy .env.example in application root directory.
+```bash
+cp .env.example .env
+```
 
+Fill DB_PASSWORD and DB_ROOT_PASSWORD in .env.
+```bash
+vi .env
+```
+
+
+### Run
+```bash
+bash start-dev.sh
+```
+
+### Tests
+```bash
+php artisan test
+```
+
+# BBG take-home-challenge
 ## Description
 We appreciate your interest in joining our BBG gang as a Full-Stack Developer. This take-home challenge will help us evaluate your coding skills, problem-solving approach, and ability to create functional web applications.
 
@@ -77,11 +100,3 @@ Your submission will be evaluated based on:
 ## Submission
 
 Please submit your code as Pull Request to this repository.
-
-# Development
-## Quick Start
-
-Start
-```bash
-  bash start-dev.sh
-```
