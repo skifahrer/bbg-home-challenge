@@ -1,5 +1,75 @@
-# BBG take-home-challenge
+# Development
 
+## Architecture & Features
+
+This project combines a Laravel backend with a Vue.js frontend, structured into a containerized architecture for local development and deployment.
+
+### Containerized Structure
+
+The application is split into four Docker containers:
+
+- **Laravel Container** – handles the backend logic via PHP and Laravel.
+- **Vue.js Container** – builds and serves the frontend using Vite and Nginx.
+- **Nginx Proxy Container** – proxies and serves PHP-FPM requests to the Laravel backend.
+- **Database Container** – used for testing and local development only; not intended for production use.
+
+### Frontend
+
+- Responsive layout compatible with desktop and mobile devices.
+- Integrated loading spinner for enhanced user experience during data fetching.
+- Custom `404 Not Found` page for undefined routes.
+
+### Backend
+
+- Nginx configurations are located in the `./nginx` directory and processed by two dedicated Dockerfiles
+- Faker is used to automatically generate sample data when seeding the database
+- Basic automated tests
+- Manual testing routes available in /tests/Manual/.http (in VS Code use REST Client)
+
+## Quick Start
+### Install (Ubuntu Linux) - Recomended
+Copy .env.example in application root directory.
+```bash
+cp .env.example .env
+```
+
+Fill DB_PASSWORD and DB_ROOT_PASSWORD in .env.
+```bash
+vi .env
+```
+
+### Run
+```bash
+bash start-dev.sh
+```
+
+### Tests
+```bash
+php artisan test
+```
+
+### Install (Windows 10)
+- Copy .env.example in application root directory.
+- Fill DB_PASSWORD and DB_ROOT_PASSWORD in .env.
+- Install Docker Desktop and WSL.
+- Reboot PC
+- Build
+```bash
+docker-compose up --build
+```
+- Open Docker Desktop and start app container
+- Open app container in docker terminal
+- Manual run migration
+```bash
+php artisan migrate
+```
+- Manual run seed
+```bash
+php artisan db:seed
+```
+- Restart all containers (without rebuild)
+
+# BBG take-home-challenge
 ## Description
 We appreciate your interest in joining our BBG gang as a Full-Stack Developer. This take-home challenge will help us evaluate your coding skills, problem-solving approach, and ability to create functional web applications.
 
@@ -40,7 +110,7 @@ Build a basic product catalog application that allows users to:
 ### Frontend Development
 
 **Technology Stack:**
-- Use your preferred frontend framework/library or pure JS with CS
+- Use your preferred frontend framework/library or pure JS with CSS
 
 **Features to Implement:**
 1. Product Listing Page:
@@ -77,11 +147,3 @@ Your submission will be evaluated based on:
 ## Submission
 
 Please submit your code as Pull Request to this repository.
-
-# Development
-## Quick Start
-
-Start mysql database
-```bash
-  docker compose up
-```
