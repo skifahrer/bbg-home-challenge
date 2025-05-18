@@ -27,7 +27,7 @@ The application is split into four Docker containers:
 - Manual testing routes available in /tests/Manual/.http (in VS Code use REST Client)
 
 ## Quick Start
-### Install
+### Install (Ubuntu Linux) - Recomended
 Copy .env.example in application root directory.
 ```bash
 cp .env.example .env
@@ -47,6 +47,27 @@ bash start-dev.sh
 ```bash
 php artisan test
 ```
+
+### Install (Windows 10)
+- Copy .env.example in application root directory.
+- Fill DB_PASSWORD and DB_ROOT_PASSWORD in .env.
+- Install Docker Desktop and WSL.
+- Reboot PC
+- Build
+```bash
+docker-compose up --build
+```
+- Open Docker Desktop and start app container
+- Open app container in docker terminal
+- Manual run migration
+```bash
+php artisan migrate
+```
+- Manual run seed
+```bash
+php artisan db:seed
+```
+- Restart all containers (without rebuild)
 
 # BBG take-home-challenge
 ## Description
