@@ -1,0 +1,96 @@
+# Laravel specific
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+Homestead.json
+Homestead.yaml
+
+# Environment-specific files
+.env.*.local
+.env.backup
+.env.production
+.env.testing
+
+# PHPUnit
+.phpunit.cache
+.phpunit.result.cache
+
+# Logs and caches
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# IDEs and Editors
+/.idea/
+/.vscode/
+/.fleet/
+/nbproject/ # NetBeans project files
+
+# Docker
+docker-compose.override.yml
+docker-compose.local.yml
+Dockerfile.local
+.dockerignore
+
+# Build artifacts
+/public/build
+/public/hot
+
+# Fleet and other JetBrains IDEs
+/.fleet/
+
+# Composer files
+/composer.phar
+composer.lock
+
+# Auth Config
+auth.json
+
+# System generated files
+.DS_Store
+Thumbs.db
+*.swo
+*.swp
+*.bak
+*.backup
+*.old
+*.tmp
+
+# Laravel Telescope
+storage/telescope
+
+# Laravel Horizon
+storage/horizon
+
+# Ignoring SQLite databases
+/database/*.sqlite
+
+# Ignoring JetBrains Rider IDE configuration
+.idea/
+
+# Ignoring VSCode Workspace settings
+.vscode/
+
+# Backup files and temporary files
+*.bak
+*.backup
+*.old
+*.tmp
+
+# Test directory
+/tests
+/tests/**/TestCase.php # Ignore all except base test cases
+
+# Storage and public directories
+/storage
+/public
+
+# Configuration files: keep app.php, ignore others
+/config/*
+!/config/app.php
+
+# Cache files
+bootstrap/cache/*.php
+!bootstrap/cache/.gitignore
